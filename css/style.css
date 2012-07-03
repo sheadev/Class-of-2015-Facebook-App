@@ -218,7 +218,54 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
-
+html, body{
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+}
+body{
+	background-image:url('/media/white-linen.png');
+	background-repeat:repeat;
+}
+footer{
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+	-webkit-box-shadow: 0 -2px 10px gray;
+	-moz-box-shadow: 0 -2px 10px gray;
+	box-shadow: 0 -2px 10px gray;
+}
+p{
+	margin-bottom:0.5em;
+}
+footer p{
+	-webkit-margin-before: 0em !important;
+	-webkit-margin-after: 0.5em !important;
+}
+#footerLinks{
+	width:100%;
+	border-top:5px solid black;
+	height:50px;
+	border-bottom:2px solid #75777D;
+	background-color:#3F4045;
+}
+#footerLegal{
+	background-color:#54565C;
+	font-size:0.8em;
+	line-height:120%;
+	color:white;
+	padding:10px;
+	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+}
+.footerLink{
+	float:right;
+	border-left:1px solid #75777D;
+	height:100%;
+	padding-left:10px;
+	padding-right:10px;
+}
 
 
 

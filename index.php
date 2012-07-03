@@ -44,8 +44,16 @@
 
 	</div>
 	<footer>
-		<p>Your use of this site is subject to the following terms and conditions. If you do not wish to agree to them, do not access the site.</p>
-		<p>The owners of this site, Facebook, and FUSD will not be held liable for any damages either directly or indirectly resulting from your use of this site, nor will they be held responsible for any actions that you take through the site's interface. We do not condone the posting of stolen, copyrighted, or innapropriate work. This site is provided to you with no warranty or guarantees whatsoever, even that of fitness for a particular purpose. Use at your own risk. We do not authorize the reproduction, storage, or transmission of any component of our site as they are all @copy; 2012. We reserve the right to collect any information about you which either your browser or you send to our servers. This information may include, but is not limited to, your IP address, your browser information, your computer information, your location, and any text that you submit through the site. We may store and redistribute this information as we please. By submitting anything to the site (eg: text, votes, ect), you transfer all rights to it to us. Any information that we access through the Facebook API about you will not be stored, and will be used in accordance with Facebook's terms of service.
+		<div id="footerLinks">
+			<div class="footerLink">e</div>
+			<div class="footerLink">a</div>
+		</div>
+		<div id="footerLegal">
+			<p>&copy; 2012</p>
+			<p>Your use of this site is subject to the following terms and conditions. If you do not wish to agree to them, do not access the site.</p>
+			<p>The owners of this site, Facebook, and FUSD will not be held liable for any damages either directly or indirectly resulting from your use of this site, nor will they be held responsible for any actions that you take through the site's interface. We do not condone the posting of stolen, copyrighted, or innapropriate work. This site is provided to you with no warranty or guarantees whatsoever, even that of fitness for a particular purpose. Use at your own risk. We do not authorize the reproduction, storage, or transmission of any component of our site as they are all copyrighted. We reserve the right to collect any information about you which either your browser or you send to our servers. This information may include, but is not limited to, your IP address, your browser information, your computer information, your location, and any text that you submit through the site. We may store and redistribute this information as we please. By submitting anything to the site (eg: text, votes, ect), you transfer all rights to it to us. Any information that we access through the Facebook API about you will not be stored, and will be used in accordance with Facebook's terms of service.
+			</p>
+		</div>
 	</footer>
 
 
