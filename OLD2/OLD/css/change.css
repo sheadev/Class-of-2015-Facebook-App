@@ -1,0 +1,2 @@
+@media all and (min-width:450px) and (max-width:500px){#period{display:none;}#introduction::after{content:" and programmer.";}}
+@media all and (min-width:500px) and (max-width:550px){#period{display:none;}#introduction::after{content:" and developer.";}}

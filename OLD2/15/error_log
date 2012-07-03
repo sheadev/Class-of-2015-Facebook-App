@@ -1,0 +1,10 @@
+[20-Jun-2012 05:25:21 UTC] Unknown algorithm. Expected HMAC-SHA256
+[20-Jun-2012 06:08:34 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home/sheacme/public_html/15/index.php on line 95
+[20-Jun-2012 06:09:29 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/sheacme/public_html/15/index.php on line 98
+[20-Jun-2012 06:09:51 UTC] PHP Parse error:  syntax error, unexpected $end in /home/sheacme/public_html/15/index.php on line 126
+[20-Jun-2012 06:10:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/sheacme/public_html/15/index.php on line 87
+[20-Jun-2012 06:19:02 UTC] Unknown algorithm. Expected HMAC-SHA256
+[20-Jun-2012 19:14:02 UTC] Unknown algorithm. Expected HMAC-SHA256
+[20-Jun-2012 19:14:27 UTC] Unknown algorithm. Expected HMAC-SHA256
+[20-Jun-2012 19:14:51 UTC] Unknown algorithm. Expected HMAC-SHA256
+[23-Jun-2012 04:30:30 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/sheacme/public_html/15/index.php on line 87

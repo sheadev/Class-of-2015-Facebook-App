@@ -227,6 +227,7 @@ html, body{
 body{
 	background-image:url('/media/white-linen.png');
 	background-repeat:repeat;
+	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 footer{
 	width:100%;
@@ -247,9 +248,18 @@ footer p{
 #footerLinks{
 	width:100%;
 	border-top:5px solid black;
-	height:50px;
+	height:1.5em;
 	border-bottom:2px solid #75777D;
 	background-color:#3F4045;
+	margin-right:10px;
+		padding:0;
+	margin:0;
+}
+.footerLink:hover{
+	background-color:#35363B;
+	-webkit-box-shadow: inset 1px 0px 5px black, inset -1px 0px 5px black;
+	-moz-box-shadow: inset 1px 0px 5px black, inset 1px 0px 5px black;
+	box-shadow: inset 1px 0px 5px black, inset -1px 0px 5px black;
 }
 #footerLegal{
 	background-color:#54565C;
@@ -257,7 +267,6 @@ footer p{
 	line-height:120%;
 	color:white;
 	padding:10px;
-	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 .footerLink{
 	float:right;
@@ -265,6 +274,15 @@ footer p{
 	height:100%;
 	padding-left:10px;
 	padding-right:10px;
+	position:relative;
+	font-weight:bold;
+	color:white;
+	width:auto;
+	display: inline;
+	list-style-type: none;
+	font-size:0.9em;
+}
+.footerLink span{
 }
 
 

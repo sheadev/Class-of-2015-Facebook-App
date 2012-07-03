@@ -44,10 +44,12 @@
 
 	</div>
 	<footer>
-		<div id="footerLinks">
-			<div class="footerLink">e</div>
-			<div class="footerLink">a</div>
-		</div>
+		<ul id="footerLinks">
+			<li class="footerLink"><span>Privacy Policy</span></li>
+			<li class="footerLink"><span>Terms of Service</span></li>
+			<li class="footerLink"><span>Get help if something isn't working</span></li>
+			<div class="clearfix"></div>
+		</ul>
 		<div id="footerLegal">
 			<p>&copy; 2012</p>
 			<p>Your use of this site is subject to the following terms and conditions. If you do not wish to agree to them, do not access the site.</p>

@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+		<script>
+			var fps=50;
+			var speed=0.2;
+		</script>
+	</head>
+	<body>
+		<input id="resize" type="button" value="If you resize the window, then click here." style="position:fixed;bottom:0;" onclick="
+			var width=$(window).width()-102;
+			var height=$(window).height()-102;
+			var xconversionfactor=width/200;
+			var yconversionfactor=height/200;
+		">
+		<input id="stop" type="button" value="STOP" style="position:fixed;bottom:0;" onclick="
+			for(bugnum in bugs){
+				bugs[bugnum].speed=0;
+			}
+		">
+		<script>
+			var coordlist=new Array();
+			var width=$(window).width()-102;
+			var height=$(window).height()-102;
+			var xconversionfactor=width/200;
+			var yconversionfactor=height/200;
+			/*for (row=-100;row<100;row++){
+				if(row
+				for (col=-100;col<100;col++){
+					$("html").append("<div id='div-"+row+"-"+col+"'></div>");
+					ref="#div-"+row+"-"+col;
+					$(ref).css('position', 'fixed');
+					$(ref).css('background-color', 'blue');
+					$(ref).css('width', (xconversionfactor*2)+"px");
+					$(ref).css('height', (yconversionfactor*2)+"px");
+					$(ref).css('left', ((xconversionfactor*col)+(width/2))+"px");
+					$(ref).css('top', ((yconversionfactor*row)+(width/2))+"px");
+				}
+			}*/
+			var bugs=[
+				{x:-100, y:-100, speed:10, eyes:'brown', gender:'female', skin:'thick', deltax:1, deltay:1},
+				{x:100, y:100, speed:5, eyes:'black', gender:'female', skin:'thin', deltax:-1, deltay:-1},
+				{x:100, y:-100, speed:2, eyes:'green', gender:'male', skin:'thin', deltax:-1, deltay:1},
+				{x:-100, y:100, speed:7, eyes:'blue', gender:'male', skin:'thick', deltax:1, deltay:-1}
+			];
+			$('#resize').css('left', ($(window).width()/2)-($('#resize').width()/2));
+			$('#stop').css('left', ($(window).width()/2)-($('#stop').width()/2));
+			$('#trails').css('left', ($(window).width()/2)-($('#trails').width()/2));
+			$('#stop').css('bottom', $('#resize').height());
+			$('#trails').css('bottom', $('#resize').height()+$('#stop').height());
+			for(bugnum in bugs){
+				ref="#bug"+bugnum;
+				$("html").append("<div id='bug"+bugnum+"'></div>");
+				$(ref).css("width","100px");
+				$(ref).css("z-index","100");
+				$(ref).css("height","100px");
+				$(ref).css("position","fixed");
+				$(ref).css("border","1px dotted gray");
+				$(ref).css("left", ((xconversionfactor*bugs[bugnum].x)+(width/2))+"px");
+				$(ref).css("top", ((yconversionfactor*bugs[bugnum].y)+(height/2))+"px");
+				$(ref).html("<img src='bugs/"+bugs[bugnum].gender+"/"+bugs[bugnum].skin+"/"+bugs[bugnum].eyes+"eyes.svg' style='width:100%;height:100%;'></img>");
+			}
+			function random(min, max) {
+  			  return Math.random() * (max - min + 1) + min;
+			}
+			function move(bugnumtwo){
+				if(!bugnumtwo){
+					for(bugnum in bugs){
+						newx=bugs[bugnum].x+(bugs[bugnum].deltax*bugs[bugnum].speed*speed);
+						newy=bugs[bugnum].y+(bugs[bugnum].deltay*bugs[bugnum].speed*speed);
+						roundnewx=Math.round(newx);
+						roundnewy=Math.round(newy);
+						if(newx<-100 || newx>100){
+							bugs[bugnum].deltax=random(-3,3);
+							move(bugnum);
+						}else{
+							bugs[bugnum].x=newx;
+							$("#bug"+bugnum).css("left", ((xconversionfactor*bugs[bugnum].x)+(width/2))+"px");
+						}
+						if(newy<-100 || newy>100){
+							bugs[bugnum].deltay=random(-3,3);
+							move(bugnum);
+						}else{
+							bugs[bugnum].y=newy;
+							$("#bug"+bugnum).css("top", ((yconversionfactor*bugs[bugnum].y)+(height/2))+"px");
+						}
+						$("html").append("<div class='trail"+roundnewx+"c"+roundnewy+" trailpet'></div>");
+						$(".trail"+roundnewx+"c"+roundnewy).css('background-color', bugs[bugnum].eyes);
+						$(".trail"+roundnewx+"c"+roundnewy).css('position', 'absolute');
+						$(".trail"+roundnewx+"c"+roundnewy).css('width', xconversionfactor);
+						$(".trail"+roundnewx+"c"+roundnewy).css('height', yconversionfactor);
+						$(".trail"+roundnewx+"c"+roundnewy).css('left', (((xconversionfactor*newx)+(width/2))+50)+"px");
+						$(".trail"+roundnewx+"c"+roundnewy).css('top', (((yconversionfactor*newy)+(height/2))+50)+"px");
+						$(".trail"+roundnewx+"c"+roundnewy).animate({ opacity: 0.05}, 1500);
+						setTimeout('$(".trail'+roundnewx+'c'+roundnewy+'").remove();', 10000);
+						if((bugs[bugnum].gender=='male') && (coordlist[roundnewx][roundnewy]!==false)){
+							bugs[random(10,1000)]={x:roundnewx, y:roundnewy, speed:10, eyes:'blue', gender:'male', skin:'thick', deltax:1, deltay:-1};
+						}else{
+							coordlist[roundnewx]=new Array();
+							coordlist[roundnewx][roundnewy]=bugnum;
+						}
+					}
+				}else{
+					bugnum=bugnumtwo;
+					newx=bugs[bugnum].x+(bugs[bugnum].deltax*bugs[bugnum].speed*speed);
+					newy=bugs[bugnum].y+(bugs[bugnum].deltay*bugs[bugnum].speed*speed);
+					if(newx<-100 || newx>100){
+						bugs[bugnum].deltax=random(-4,4);
+						move(bugnum);
+					}else{
+						bugs[bugnum].x=newx;
+						$("#bug"+bugnum).css("left", ((xconversionfactor*bugs[bugnum].x)+(width/2))+"px");
+					}
+					if(newy<-100 || newy>100){
+						bugs[bugnum].deltay=random(-4,4);
+						move(bugnum);
+					}else{
+						bugs[bugnum].y=newy;
+						$("#bug"+bugnum).css("top", ((yconversionfactor*bugs[bugnum].y)+(height/2))+"px");
+					}
+				}
+				for(xcoord in coordlist){
+					for(ycoord in xcoord){
+						coordlist[xcord][ycord]=false;
+					}
+				}
+			}
+			setInterval('move(false)', 1000/fps);
+		</script>
+	</body>
+</html>

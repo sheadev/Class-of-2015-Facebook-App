@@ -1,0 +1,8 @@
+<?php
+$sqlServer='';
+$sqlUsername='';
+$sqlPassword='';
+
+
+
+?>
